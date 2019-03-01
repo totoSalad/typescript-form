@@ -14,13 +14,13 @@ class Field {
   private com: Component | null = null
 
   constructor(com: Component) {
-    console.log('this', this)
     this.com = com
     ;[ "init", "getValue", "getValues"].forEach((m: string) => {
       this[m] = this[m].bind(this)
     })
   }
 
+  // TODO: 增加校验
   public init = (name: string) => {
     let field = this.get(name)
     console.log('stored field', field)
