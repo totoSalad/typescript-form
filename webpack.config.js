@@ -5,12 +5,11 @@ const { CheckerPlugin } = require('awesome-typescript-loader');
 var ROOT = path.resolve(__dirname)
 
 module.exports = {
-  entry: './src/index.tsx',
-  devtool: 'source-map',
+  entry: './demo/index.tsx',
+  devtool: 'cheap-module-source-map',
   output: {
     path: ROOT + '/dist',
     filename: '[name].bundle.js',
-    sourceMapFilename: '[name].bundle.map.js',
     publicPath: '//localhost:8889/dist/',
   },
   devServer: {
