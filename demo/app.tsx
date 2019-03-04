@@ -16,8 +16,10 @@ export default class Demo extends React.Component<{}, {}> {
     const {init} = this.field
     // tslint:disable-next-line:jsx-wrap-multiline
     return <form>
-        username: <input {...init("username")} />
+        username: <input {...init("username", {rule: [{validator: (value) => value!=='ckb', message: '不能输入ckb哦'}]})} />
+        <span style={{display: 'block'}}>{this.field.getError('username')}</span>
         passowrd: <input {...init("password")} />
+        <span style={{display: 'block'}}>{this.field.getError('password')}</span>
         <button onClick={this.handleSubmit} >submit</button>
     </form>
   }
